@@ -1,4 +1,5 @@
 import 'package:estate_on/Constants.dart';
+import 'package:estate_on/Controllers/LoginActivity.dart';
 import 'package:flutter/material.dart';
 
 class IntroActivity2 extends StatefulWidget {
@@ -76,7 +77,11 @@ class _IntroActivity2State extends State<IntroActivity2> {
                   child: Row(
                     children: [
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            if (Navigator.canPop(context)) {
+                              Navigator.pop(context);
+                            }
+                          },
                           // color: Colors.orange,
                           // padding: EdgeInsets.all(10.0),
                           child: Column(
@@ -95,6 +100,8 @@ class _IntroActivity2State extends State<IntroActivity2> {
                         ),
                         onPressed: () {
                           print('Get started tapped');
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const LoginActivity()));
                         },
                         style: ButtonStyle(
                             padding: MaterialStateProperty.resolveWith<

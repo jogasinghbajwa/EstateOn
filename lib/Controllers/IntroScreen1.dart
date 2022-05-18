@@ -1,4 +1,6 @@
 import 'package:estate_on/Constants.dart';
+import 'package:estate_on/Controllers/IntroScreen2.dart';
+import 'package:estate_on/Controllers/LoginActivity.dart';
 import 'package:flutter/material.dart';
 
 class IntroActivity1 extends StatefulWidget {
@@ -38,7 +40,8 @@ class _IntroActivity1State extends State<IntroActivity1> {
                       style: TextStyle(color: Colors.black),
                     ),
                     onPressed: () {
-                      print('Skip Tapped');
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const LoginActivity()));
                     },
                     style: ElevatedButton.styleFrom(
                         elevation: 10,
@@ -76,6 +79,8 @@ class _IntroActivity1State extends State<IntroActivity1> {
             child: const Text('Next'),
             onPressed: () {
               print('Next tapped');
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const IntroActivity2()));
             },
             style: ButtonStyle(
                 padding: MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
